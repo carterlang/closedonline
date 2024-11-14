@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import {
   Menubar,
   MenubarContent,
@@ -10,11 +11,24 @@ import {
 } from "@/components/ui/menubar";
 
 const page = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
+
+  if (!isLoaded) {
+    return (
+      <div className="text-red-800 font-bold">
+        <em>LOADING...</em>
+      </div>
+    );
+  }
+
   return (
-    <>
+    <html lang="en">
       <head></head>
-      <body className="bg-gray-300 ">
-        <div className="p-12 mt-15 flex justify-between ">
+      <body>
+        <div>
           <Menubar>
             <MenubarMenu>
               <MenubarTrigger>File</MenubarTrigger>
@@ -53,7 +67,7 @@ const page = () => {
           </Menubar>
         </div>
       </body>
-    </>
+    </html>
   );
 };
 
