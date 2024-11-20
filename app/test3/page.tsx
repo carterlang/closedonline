@@ -12,8 +12,8 @@ import React from "react";
 
 const page = () => {
   return (
-    <html>
-      <body>
+    <>
+      <a href="/test2">
         <div>
           <Menubar>
             <MenubarMenu>
@@ -52,8 +52,18 @@ const page = () => {
             </MenubarMenu>
           </Menubar>
         </div>
-      </body>
-    </html>
+        <div>
+          <video
+            className=" flex fixed -z-1 w-screen"
+            autoPlay
+            loop
+            disablePictureInPicture
+          >
+            <source src={"/assets/videobg.mp4"} className="" />
+          </video>
+        </div>
+      </a>
+    </>
   );
 };
 
